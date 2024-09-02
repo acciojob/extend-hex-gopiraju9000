@@ -1,6 +1,12 @@
 const extendHex = (shortHex) => {
-  // write your code here
-	return shortHex[0]+shortHex[0]+shortHex[1]+shortHex[1]+shortHex[2]+shortHex[2];
+  // Remove the leading '#' if present
+  shortHex = shortHex.replace('#', '');
+
+  // Extend the short hex to full hex by repeating each character
+  let extendedHex = shortHex.split('').map(char => char + char).join('');
+
+  // Add the leading '#' back to the extended hex code
+  return `#${extendedHex}`;
 };
 
 // Do not change the code below.
